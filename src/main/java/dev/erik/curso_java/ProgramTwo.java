@@ -13,25 +13,28 @@ public class ProgramTwo {
         Product product = new Product();
 
         System.out.println("Enter product data: ");
+        System.out.printf("Name: ");
         product.name = sc.nextLine();
+        System.out.printf("Price: ");
         product.price = sc.nextDouble();
+        System.out.printf("Quantity: ");
         product.quantity = sc.nextInt();
 
         double total = product.totalValueInStock(product.price, product.quantity);
         System.out.println(Product.message(product.name, product.price, product.quantity, total));
 
         System.out.println("Enter the number of products to be added in stoxk: ");
-        product.add = sc.nextInt();
-        product.quantity = product.addProducts(product.quantity, product.add);
+        int quantity = sc.nextInt();
+        product.addProducts(quantity);
         total = product.totalValueInStock(product.price, product.quantity);
         System.out.println(Product.message(product.name, product.price, product.quantity, total));
 
-         System.out.println("Enter the number of product to be removed in stock: ");
-         product.remove = sc.nextInt();
-         product.quantity = product.removeProducts(product.quantity, product.remove);
-         total = product.totalValueInStock(product.price, product.quantity);
-         System.out.println(Product.message(product.name, product.price, product.quantity, total));
-
-         sc.close();    
+        System.out.println("Enter the number of product to be removed in stock: ");
+        quantity = sc.nextInt();
+        product.removeProducts(quantity);
+        total = product.totalValueInStock(product.price, product.quantity);
+        System.out.println(Product.message(product.name, product.price, product.quantity, total));
+        
+         sc.close();            
     }
 }

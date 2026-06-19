@@ -1,4 +1,4 @@
-package dev.erik.curso_java;
+package dev.erik.curso_java.program;
 
 import java.util.Locale;
 import java.util.Scanner;
